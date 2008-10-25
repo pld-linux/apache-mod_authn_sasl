@@ -6,7 +6,7 @@ Name:		apache-mod_%{mod_name}
 Version:	1.0
 Release:	1
 License:	BSD
-Group:		Networking/Daemons
+Group:		Networking/Daemons/HTTP
 Source0:	http://dl.sourceforge.net/mod-authn-sasl/mod_authn_sasl-%{version}.tar.bz2
 # Source0-md5:	53e60c13cdb749128da13a91d413789c
 URL:		http://mod-authn-sasl.sourceforge.net/
