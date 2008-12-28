@@ -3,12 +3,12 @@
 Summary:	Basic authentication for the Apache Web server using SASL
 Summary(pl.UTF-8):	Podstawowe uwierzytelnianie (Basic) dla serwera WWW Apache przy użyciu SASL
 Name:		apache-mod_%{mod_name}
-Version:	1.0
+Version:	1.0.2
 Release:	1
 License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	http://dl.sourceforge.net/mod-authn-sasl/mod_authn_sasl-%{version}.tar.bz2
-# Source0-md5:	53e60c13cdb749128da13a91d413789c
+# Source0-md5:	0272cb8550fe557177729b0c927d56f0
 URL:		http://mod-authn-sasl.sourceforge.net/
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.2
@@ -29,7 +29,7 @@ Ten moduł umożliwia używanie SASL do uwierzytelniania użytkownika.
 %setup -q -n mod_%{mod_name}-%{version}
 
 %build
-%{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.la
+%{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.la -lsasl2
 
 %install
 rm -rf $RPM_BUILD_ROOT
