@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Podstawowe uwierzytelnianie (Basic) dla serwera WWW Apache pr
 Name:		apache-mod_%{mod_name}
 Version:	1.2
 Release:	1
-License:	BSD
+License:	Apache v2.0
 Group:		Networking/Daemons/HTTP
 Source0:	https://downloads.sourceforge.net/mod-authn-sasl/mod_authn_sasl-%{version}.tar.bz2
 # Source0-md5:	089e86b47b1e82b2a2955459b5caec98
@@ -53,5 +53,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS Changelog
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/90_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/mod_authn_sasl.so
