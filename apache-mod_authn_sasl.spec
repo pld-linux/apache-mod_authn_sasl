@@ -3,15 +3,16 @@
 Summary:	Basic authentication for the Apache Web server using SASL
 Summary(pl.UTF-8):	Podstawowe uwierzytelnianie (Basic) dla serwera WWW Apache przy użyciu SASL
 Name:		apache-mod_%{mod_name}
-Version:	1.0.2
+Version:	1.2
 Release:	1
 License:	BSD
 Group:		Networking/Daemons/HTTP
-Source0:	http://dl.sourceforge.net/mod-authn-sasl/mod_authn_sasl-%{version}.tar.bz2
-# Source0-md5:	0272cb8550fe557177729b0c927d56f0
-URL:		http://mod-authn-sasl.sourceforge.net/
+Source0:	https://downloads.sourceforge.net/mod-authn-sasl/mod_authn_sasl-%{version}.tar.bz2
+# Source0-md5:	089e86b47b1e82b2a2955459b5caec98
+URL:		https://mod-authn-sasl.sourceforge.net/
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.2
+BuildRequires:	cyrus-sasl-devel >= 2
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	apache(modules-api) = %apache_modules_api
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -52,5 +53,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*_mod_%{mod_name}.conf
-%attr(755,root,root) %{_pkglibdir}/*.so
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/90_mod_%{mod_name}.conf
+%attr(755,root,root) %{_pkglibdir}/mod_authn_sasl.so
